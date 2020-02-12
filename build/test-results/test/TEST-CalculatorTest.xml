@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-02-12T09:45:50" hostname="admin1-ThinkCentre-M72e" time="0.007">
+  <properties/>
+  <testcase name="TestMultiplication" classname="CalculatorTest" time="0.007"/>
+  <system-out><![CDATA[3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
