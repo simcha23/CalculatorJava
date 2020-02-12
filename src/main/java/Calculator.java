@@ -29,6 +29,9 @@ public class Calculator {
         for(int value : num) {
             multiply *= value;
         }
+//        for(int i = 0; i < num.length; i++) {
+//            multiply *= num[i];
+//        }
 
         return multiply;
     }
