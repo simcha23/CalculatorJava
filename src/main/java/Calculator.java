@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Calculator {
@@ -9,6 +8,8 @@ public class Calculator {
 
 
         Scanner scan = new Scanner(System.in);
+        Operators operator = new Operators();
+        Validation validation = new Validation();
 
         ArrayList<Integer> integerList = new ArrayList<>();
 
@@ -18,7 +19,7 @@ public class Calculator {
             String number = scan.nextLine();
 
             if(!number.trim().equalsIgnoreCase("a")|| !number.trim().equalsIgnoreCase("A")){
-                if(numberOrNot(number)){
+                if(validation.numberOrNot(number)){
 
                     integerList.add(Integer.parseInt(number));
                 }
@@ -44,43 +45,12 @@ public class Calculator {
 
         System.out.println("\n---------ADDITION----------\n");
 
-        System.out.println("The answer is:\t" + add(array));
+        System.out.println("The answer is:\t" + operator.add(array));
 
         System.out.println("\n---------MULTIPLICATIONS----------\n");
 
-        System.out.println("The answer is:\t" + multiply(array));
+        System.out.println("The answer is:\t" + operator.multiply(array));
 
-    }
-    public static int add(int... num){
-
-        int sum = 0;
-        for(int value:num) {
-            sum = sum + value;
-        }
-
-        return sum;
-    }
-    public static int multiply(int... num){
-
-        int multiply = 1;
-        for(int value : num) {
-            multiply *= value;
-        }
-
-        return multiply;
-    }
-    public static boolean numberOrNot(String input)
-    {
-        try
-        {
-            Integer.parseInt(input);
-
-        }
-        catch(NumberFormatException ex)
-        {
-            return false;
-        }
-        return true;
     }
 }
 
