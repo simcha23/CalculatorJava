@@ -8,8 +8,6 @@ public class Calculator {
 
 
         Scanner scan = new Scanner(System.in);
-        Operators operator = new Operators();
-        Validation validation = new Validation();
 
         ArrayList<Integer> integerList = new ArrayList<>();
 
@@ -19,7 +17,7 @@ public class Calculator {
             String number = scan.nextLine();
 
             if(!number.trim().equalsIgnoreCase("a")|| !number.trim().equalsIgnoreCase("A")){
-                if(validation.numberOrNot(number)){
+                if(numberOrNot(number)){
 
                     integerList.add(Integer.parseInt(number));
                 }
@@ -39,18 +37,47 @@ public class Calculator {
         int[] array = new int[integerList.size()];
         for(int z =0 ; z< integerList.size(); z++){
             array[z] = integerList.get(z);
-            System.out.println(array[z]);
         }
-
 
         System.out.println("\n---------ADDITION----------\n");
 
-        System.out.println("The answer is:\t" + operator.add(array));
+        System.out.println("The answer is:\t" + add(array));
 
-        System.out.println("\n---------MULTIPLICATIONS----------\n");
+        System.out.println("\n-----MULTIPLICATIONS-------\n");
 
-        System.out.println("The answer is:\t" + operator.multiply(array));
+        System.out.println("The answer is:\t" + multiply(array));
 
+    }
+    public static int add(int... num){
+
+        int sum = 0;
+        for(int value:num) {
+            sum = sum + value;
+        }
+
+        return sum;
+    }
+    public static int multiply(int... num){
+
+        int multiply = 1;
+        for(int value : num) {
+            multiply *= value;
+        }
+
+        return multiply;
+    }
+    public static boolean numberOrNot(String input)
+    {
+        try
+        {
+            Integer.parseInt(input);
+
+        }
+        catch(NumberFormatException ex)
+        {
+            return false;
+        }
+        return true;
     }
 }
 

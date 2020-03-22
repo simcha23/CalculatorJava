@@ -1,37 +1,25 @@
 import org.junit.Assert;
 import org.junit.Test;
-import javax.swing.JOptionPane;
 
 public class CalculatorTest {
+    Calculator operator = new Calculator();
 
-    @Test
-    public  void TestMultiplication()
-    {
-        int multiply = 1;
-
-        for(int x = 0; x < 2; x++) {
-
-            String number = JOptionPane.showInputDialog("Enter number " + (x + 1));
-
-            multiply = multiply * Integer.parseInt(number);
-        }
-
-        Assert.assertEquals(8,multiply);
-    }
     @Test
     public  void TestAddition()
     {
-        int sum = 0;
 
-        for(int x = 0; x < 3; x++) {
-
-            String number = JOptionPane.showInputDialog("Enter number " + (x + 1));
-
-            sum = sum + Integer.parseInt(number);
-        }
+        int sum = operator.add(new int[]{1,2,3,2});
 
         Assert.assertEquals(8,sum);
 
+    }
+    @Test
+    public  void TestMultiplication()
+    {
+
+        int multiply = operator.multiply(new int[]{1,2,3,2});
+
+        Assert.assertEquals(12,multiply);
     }
 
 }
