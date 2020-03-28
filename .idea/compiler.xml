@@ -6,6 +6,8 @@
       <module name="Calculator.test" target="1.8" />
       <module name="CalculatorJava.main" target="1.8" />
       <module name="CalculatorJava.test" target="1.8" />
+      <module name="org.example.CalculatorJava.main" target="1.8" />
+      <module name="org.example.CalculatorJava.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
